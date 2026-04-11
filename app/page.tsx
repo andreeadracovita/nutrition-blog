@@ -1,4 +1,5 @@
 // import type { Metadata } from "next";
+import BlogCard from "./components/BlogCard";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
 import TextCard from "./components/TextCard";
@@ -29,6 +30,11 @@ export default function IndexPage() {
 				title="Power tips, recipes & more"
 				subtitle="Our Blog"
 			/>
+			<div className="columns-3">
+				<BlogCard />
+				<BlogCard />
+				<BlogCard />
+			</div>
 		</>
 	);
 }
