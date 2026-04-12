@@ -5,7 +5,7 @@ interface Props {
 
 export default function Header ({title, subtitle}: Props) {
 	return (
-		<div className="bg-amber-300 rounded-3xl px-8 py-10 my-10">
+		<div className="bg-amber-300 rounded-3xl px-8 py-10 my-6">
 			<h3>{subtitle}</h3>
 			<h2>{title}</h2>
 		</div>

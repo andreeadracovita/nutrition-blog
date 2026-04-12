@@ -45,14 +45,8 @@ h4 {
 	@apply bg-amber-400;
 }
 
-.hero {
-  background-image: url('/hero.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: #cccccc;
-  height: 920px;
-  @apply grid grid-cols-2 rounded-3xl;
+.component-container {
+	@apply border-1 border-solid rounded-3xl border-neutral-200;
 }
 
 @tailwind components;

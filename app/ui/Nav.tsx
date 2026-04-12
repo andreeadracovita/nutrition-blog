@@ -4,8 +4,10 @@ import Link from "next/link";
 
 export const Nav = () => {
 	return (
-		<nav className="bg-amber-300 rounded-3xl px-8 py-4 my-10 flex justify-between items-center">
-			<div className="text-3xl font-extrabold">Unlock with Nutrition</div>
+		<nav className="bg-amber-300 rounded-3xl px-8 py-4 my-6 flex justify-between items-center">
+			<Link href="/">
+				<div className="text-3xl font-extrabold">Unlock with Nutrition</div>
+			</Link>
 			<div className="space-x-10">
 				<Link href="/">
 					Home
