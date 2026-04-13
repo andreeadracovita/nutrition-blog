@@ -1,4 +1,8 @@
-export default function BlogNav({categories}) {
+interface Props {
+	readonly categories: string[];
+}
+
+export default function BlogNav({categories}: Props) {
 	
 	return (
 		<div className="w-full">

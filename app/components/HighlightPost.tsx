@@ -3,23 +3,23 @@ import { FaRegCalendar } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 
 import Avatar from "./Avatar";
+import { getArticleWithId } from "@/lib/features/articles/data";
 
 export default function HighlightPost() {
-	const data = {
-		title: "Too many choices",
-		body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare quis augue quis porttitor. Cras dapibus sed est at aliquam. Pellentesque tempor in elit sed dictum. Nunc at sem ut eros tempor auctor id at augue. Pellentesque efficitur libero at nisi aliquet, et maximus mauris varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl mauris, tincidunt quis arcu eget, dignissim feugiat nulla. Cras et sapien non eros placerat pharetra sit amet vitae orci. Ut volutpat est id orci pulvinar, in fringilla libero dapibus. Vivamus elementum, nunc sit amet finibus faucibus, ipsum velit feugiat diam, eu bibendum elit magna vel nunc. Maecenas sit amet risus ac ex gravida facilisis ac sed magna. In id lorem nulla. Donec at consequat ex.",
-		author: "Wolf Chan",
-		date: new Date("01 Jan 2026")
-	};
+	const data = getArticleWithId(3);
+
+	if (!data) {
+		return (<></>);
+	}
 
 	const options = {
-		day: "numeric",
-		month: "short",
-		year: "numeric"
-	}
+		year: "numeric" as const,
+		month: "short" as const,
+		day: "numeric" as const
+	};
 	
 	return (
-		<Link href={`/blog/${data.slug}`}>
+		<Link href={`/blog/${data.id}`}>
 			<div className="bg-[url('/grocery.jpg')] bg-cover bg-center w-full rounded-3xl overflow-hidden h-150 relative">
 				<div className="absolute bg-stone-50/80 p-8 inset-x-0 bottom-0">
 					<div className="relative">

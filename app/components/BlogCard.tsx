@@ -1,18 +1,23 @@
+import parse from "html-react-parser";
 import Link from "next/link";
 import { FaRegEye } from "react-icons/fa";
 import { BsChatLeft } from "react-icons/bs";
 
-export default function BlogCard({data}) {
+interface Props {
+	readonly data: any;
+}
+
+export default function BlogCard({data}: Props) {
 
 	return (
-		<Link href={`/blog/${data.slug}`}>
+		<Link href={`/blog/${data.id}`}>
 			<div className="component-container overflow-hidden">
-				<img src="butter.jpg" />
+				<img src={data.cover} />
 				<div className="p-6">
 					<p className="label">{data.author}</p>
 					<p className="label">{data.readTime} min read</p>
 					<h4 className="my-2">{data.title}</h4>
-					<p className="line-clamp-3 mb-4">{data.body}</p>
+					{data.body && <span className="line-clamp-3 mb-4">{parse(data.body)}</span>}
 					<hr className="h-px bg-neutral-300 border-0" />
 					<div className="mt-4 flex items-center">
 						<div className="flex space-x-4">

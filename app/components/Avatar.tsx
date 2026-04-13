@@ -1,4 +1,8 @@
-export default function Avatar({name}) {
+interface Props {
+	readonly name: string;
+}
+
+export default function Avatar({name}: Props) {
 	
 	return (
 		<div className="flex items-center space-x-2">
