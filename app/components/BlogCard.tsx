@@ -9,10 +9,16 @@ interface Props {
 
 export default function BlogCard({data}: Props) {
 
+	if (!data) {
+		return (<></>);
+	}
+
+	const imgUrl = "/" + data.cover;
+
 	return (
 		<Link href={`/blog/${data.id}`}>
 			<div className="component-container overflow-hidden">
-				<img src={data.cover} />
+				<div className="bg-cover bg-center h-70" style={{ backgroundImage: `url(${imgUrl})`}}></div>
 				<div className="p-6">
 					<p className="label">{data.author}</p>
 					<p className="label">{data.readTime} min read</p>

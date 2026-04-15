@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 
+import RecentPosts from "app/components/RecentPosts";
 import BackButton from "app/ui/BackButton";
 import Search from "app/ui/Search";
 
@@ -17,10 +19,11 @@ export default function BlogPostLayout({ children }: Props) {
 
 			{children}
 
-			<div className="my-6 flex justify-between">
+			<div className="layout-spacing flex justify-between">
 				<p>Recent Posts</p>
-				<p>See All</p>
+				<Link href="/blog"><p>See All</p></Link>
 			</div>
+			<RecentPosts />
 		</div>
 	);
 }

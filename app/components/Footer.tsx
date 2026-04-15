@@ -2,7 +2,7 @@ export default function Footer() {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className="bg-amber-300 p-8 rounded-3xl h-100 my-8 grid grid-cols-2 rounded-3xl">
+		<footer className="layout-spacing bg-amber-300 p-8 rounded-3xl h-100 grid grid-cols-2 rounded-3xl">
 			<div className="grid content-between">
 				<h2>Unlock with Nutrition</h2>
 

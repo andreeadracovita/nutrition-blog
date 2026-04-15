@@ -1,13 +1,11 @@
 // import type { Metadata } from "next";
-import BlogCard from "app/components/BlogCard";
 import Hero from "app/components/Hero";
 import Header from "app/components/Header";
 import TextCard from "app/components/TextCard";
-import { getArticles } from "@/lib/features/articles/data";
+import RecentPosts from "app/components/RecentPosts";
 
 export default function IndexPage() {
-	const data = getArticles();
-
+	
 	return (
 		<>
 			<Hero />
@@ -33,11 +31,7 @@ export default function IndexPage() {
 				title="Power tips, recipes & more"
 				subtitle="Our Blog"
 			/>
-			<div className="my-4 grid grid-cols-1 gap-6 lg:grid-cols-3">
-			{
-				data && data.map((entry: any) => <BlogCard key={entry} data={entry} />)
-			}
-			</div>
+			<RecentPosts />
 		</>
 	);
 }

@@ -1,3 +1,4 @@
+import parse from "html-react-parser";
 import Link from "next/link";
 import { FaRegCalendar } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
@@ -12,6 +13,7 @@ export default function HighlightPost() {
 		return (<></>);
 	}
 
+	const imgUrl = "/" + data.cover;
 	const options = {
 		year: "numeric" as const,
 		month: "short" as const,
@@ -20,13 +22,13 @@ export default function HighlightPost() {
 	
 	return (
 		<Link href={`/blog/${data.id}`}>
-			<div className="bg-[url('/grocery.jpg')] bg-cover bg-center w-full rounded-3xl overflow-hidden h-150 relative">
+			<div className="bg-cover bg-center w-full rounded-3xl overflow-hidden h-150 relative layout-spacing" style={{ backgroundImage: `url(${imgUrl})`}}>
 				<div className="absolute bg-stone-50/80 p-8 inset-x-0 bottom-0">
 					<div className="relative">
 						<MdArrowOutward className="absolute top-0 right-0" size="46" />
 						<h4>{data.title}</h4>
 					</div>
-					<p className="truncate">{data.body}</p>
+					<span className="[&>p]:truncate [&>p]:hidden [&>p:first-child]:block [&>img]:hidden">{parse(data.body)}</span>
 					<div className="flex items-center mt-6 space-x-6">
 						<Avatar name={data.author} />
 						<div className="flex items-center space-x-2">

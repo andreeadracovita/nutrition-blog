@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Nav = () => {
 	return (
-		<nav className="bg-amber-300 rounded-3xl px-8 py-4 my-6 flex justify-between items-center">
+		<nav className="mt-6 bg-amber-300 rounded-3xl px-8 py-4 flex justify-between items-center">
 			<Link href="/">
 				<div className="text-3xl font-extrabold">Unlock with Nutrition</div>
 			</Link>

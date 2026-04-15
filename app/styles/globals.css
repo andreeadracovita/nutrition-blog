@@ -49,5 +49,9 @@ h4 {
 	@apply border-1 border-solid rounded-3xl border-neutral-200;
 }
 
+.layout-spacing {
+	@apply my-6;
+}
+
 @tailwind components;
 @tailwind utilities;

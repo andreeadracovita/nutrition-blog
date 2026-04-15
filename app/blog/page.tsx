@@ -18,16 +18,16 @@ export default function BlogPage() {
 
 			<HighlightPost />
 
-			<div className="my-6 grid grid-cols-3 gap-4">
+			<div className="layout-spacing grid grid-cols-3 gap-4">
 				<div className="col-span-2 flex items-end">
 					<BlogNav categories={category} />
 				</div>
 				<Search />
 			</div>
 
-			<div className="my-4 grid grid-cols-1 gap-6 lg:grid-cols-3 2xl:grid-cols-4">
+			<div className="layout-spacing grid grid-cols-1 gap-6 lg:grid-cols-3 2xl:grid-cols-4">
 			{
-				data && data.map((entry: any) => <BlogCard key={entry} data={entry} />)
+				data && data.map((entry: any) => <BlogCard key={entry.id} data={entry} />)
 			}
 			</div>
 		</>
